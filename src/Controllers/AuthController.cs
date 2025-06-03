@@ -3,7 +3,6 @@ using MyApi.DTOs;
 using MyApi.Services.Interfaces;
 
 namespace MyApi.Controllers;
-// abcasca
 [Route("api/[controller]")]
 [ApiController]
 public class AuthController : ControllerBase
