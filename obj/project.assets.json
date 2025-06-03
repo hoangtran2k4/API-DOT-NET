@@ -5117,11 +5117,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\DNCN\\API\\API\\API_DOTNET.csproj",
+      "projectUniqueName": "E:\\DNCN\\API\\API-DOT-NET\\API_DOTNET.csproj",
       "projectName": "API_DOTNET",
-      "projectPath": "E:\\DNCN\\API\\API\\API_DOTNET.csproj",
+      "projectPath": "E:\\DNCN\\API\\API-DOT-NET\\API_DOTNET.csproj",
       "packagesPath": "C:\\Users\\hoang\\.nuget\\packages\\",
-      "outputPath": "E:\\DNCN\\API\\API\\obj\\",
+      "outputPath": "E:\\DNCN\\API\\API-DOT-NET\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\hoang\\AppData\\Roaming\\NuGet\\NuGet.Config"
