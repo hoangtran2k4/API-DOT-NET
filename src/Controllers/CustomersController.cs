@@ -1,10 +1,9 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MyApi.DTOs;
 using MyApi.Services;
 
 namespace MyApi.Controllers;
-
-using Microsoft.AspNetCore.Authorization;
 
 [ApiController]
 [Route("api/[controller]")]
@@ -18,28 +17,40 @@ public class CustomersController : ControllerBase
     }
 
     [HttpGet]
-    public IActionResult GetAll() => Ok(_customersService.GetAll());
+    public IActionResult GetAll()
+    {
+        var result = _customersService.GetAll();
+        return StatusCode(result.HttpStatusCode, result);
+    }
 
     [HttpGet("{id}")]
     public IActionResult GetById(long id)
     {
-        var customer = _customersService.GetById(id);
-        return customer != null ? Ok(customer) : NotFound();
+        var result = _customersService.GetById(id);
+        return StatusCode(result.HttpStatusCode, result);
     }
 
     [Authorize]
     [HttpPost]
-    public IActionResult CreateCustomer(CustomerDto dto)
+    public IActionResult CreateCustomer([FromBody] CustomerDto dto)
     {
         var result = _customersService.CreateCustomer(dto);
-        return result.Success ? Ok(result) : BadRequest(result);
+        return StatusCode(result.HttpStatusCode, result);
     }
 
     [Authorize]
     [HttpPut("{id}")]
-    public IActionResult Update(long id, CustomerDto dto) => Ok(_customersService.Update(id, dto));
+    public IActionResult Update(long id, [FromBody] CustomerDto dto)
+    {
+        var result = _customersService.Update(id, dto);
+        return StatusCode(result.HttpStatusCode, result);
+    }
 
     [Authorize]
     [HttpDelete("{id}")]
-    public IActionResult Delete(long id) => Ok(_customersService.Delete(id));
+    public IActionResult Delete(long id)
+    {
+        var result = _customersService.Delete(id);
+        return StatusCode(result.HttpStatusCode, result);
+    }
 }

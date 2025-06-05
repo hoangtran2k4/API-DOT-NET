@@ -14,6 +14,10 @@ namespace MyApi.Models
         public string password { get; set; } = null!;
 
         [MaxLength(20)]
-        public string role { get; set; } = null!;
+        public string role { get; set; } = "User";
+
+        public DateTime? LastActive { get; set; }
+
+        public bool IsOnline { get; set; } = false;
     }
 }
