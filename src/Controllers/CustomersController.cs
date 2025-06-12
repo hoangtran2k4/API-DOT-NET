@@ -39,7 +39,7 @@ public class CustomersController : ControllerBase
     }
 
     [Authorize]
-    [HttpPut("{id}")]
+    [HttpPost("{id}/put")]
     public IActionResult Update(long id, [FromBody] CustomerDto dto)
     {
         var result = _customersService.Update(id, dto);
@@ -47,7 +47,7 @@ public class CustomersController : ControllerBase
     }
 
     [Authorize]
-    [HttpDelete("{id}")]
+    [HttpPost("{id}/delete")]
     public IActionResult Delete(long id)
     {
         var result = _customersService.Delete(id);

@@ -1,4 +1,3 @@
-// Models/ApiResponse.cs
 namespace MyApi.Models;
 
 public class ApiResponse<T>

@@ -48,9 +48,6 @@ namespace MyApi.Services.Implementations
             return await _context.Users.FirstOrDefaultAsync(u => u.username == username);
         }
 
-        // Giữ nguyên GenerateJwtToken như hiện tại
-
-
         public string GenerateJwtToken(string username, string role)
         {
             var jwt = _config.GetSection("Jwt");

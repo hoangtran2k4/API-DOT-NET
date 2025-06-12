@@ -1,5 +1,3 @@
-// DTOs/ProductDto.cs
-// DTO dùng cho create/update
 namespace MyApi.DTOs;
 
 public class ProductDto
